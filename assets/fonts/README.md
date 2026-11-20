@@ -5,4 +5,5 @@ They are inlined (base64) into each card because GitHub's image proxy blocks ext
 from inside SVGs. All families are licensed under the SIL Open Font License 1.1:
 
 Montserrat · Inter · JetBrains Mono · Quicksand · Orbitron · Press Start 2P · VT323 ·
-Space Grotesk · Playfair Display · Lora
+Space Grotesk · Playfair Display · Lora · Chakra Petch · Bangers · Comic Neue · Shrikhand ·
+Tilt Neon · Architects Daughter · Caveat
