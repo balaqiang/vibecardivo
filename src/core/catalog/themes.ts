@@ -1,0 +1,338 @@
+import type { FontId } from './fonts.js';
+
+export const AVATAR_SHAPES = ['circle', 'rounded', 'square', 'hexagon'] as const;
+export type AvatarShape = (typeof AVATAR_SHAPES)[number];
+
+/** `auto` uses the theme's signature animation. */
+export const ANIMATIONS = ['auto', 'slide', 'fade', 'pop', 'type', 'none'] as const;
+export type AnimationOption = (typeof ANIMATIONS)[number];
+export type Animation = Exclude<AnimationOption, 'auto'>;
+
+/** Colours are always 6-digit hex so they can be mixed and contrast-checked. */
+export interface Palette {
+  background: string;
+  text: string;
+  muted: string;
+  /** Icons and highlights — overridden by `?iconColor=`. */
+  accent: string;
+  /** Chips, panels, code blocks. */
+  surface: string;
+  border: string;
+  /** Default colour for background patterns. */
+  pattern: string;
+}
+
+export interface ThemeMeta {
+  id: string;
+  name: string;
+  description: string;
+  tags: readonly string[];
+  palette: Palette;
+  /** Default background pattern, `null` for none. */
+  pattern: string | null;
+  patternOpacity: number;
+  avatarShape: AvatarShape;
+  radius: number;
+  animation: Animation;
+  fonts: readonly FontId[];
+  /** Maximum number of social links the layout has room for. */
+  maxSocials: number;
+}
+
+export const THEMES = [
+  {
+    id: 'classic',
+    name: 'Classic',
+    description: 'The original Cardivo look: Montserrat, avatar on the right, slide-in text.',
+    tags: ['light', 'original'],
+    palette: {
+      background: '#ecf0f1',
+      text: '#1e272e',
+      muted: '#4b5563',
+      accent: '#e64a19',
+      surface: '#ffffff',
+      border: '#666666',
+      pattern: '#d5dbdd',
+    },
+    pattern: null,
+    patternOpacity: 0.4,
+    avatarShape: 'circle',
+    radius: 0,
+    animation: 'slide',
+    fonts: ['montserrat-400', 'montserrat-700'],
+    maxSocials: 6,
+  },
+  {
+    id: 'modern',
+    name: 'Modern',
+    description: 'Clean light card with soft gradients, pill chips and a rounded avatar.',
+    tags: ['light', 'clean'],
+    palette: {
+      background: '#ffffff',
+      text: '#0f172a',
+      muted: '#64748b',
+      accent: '#6366f1',
+      surface: '#f1f5f9',
+      border: '#e2e8f0',
+      pattern: '#cbd5e1',
+    },
+    pattern: null,
+    patternOpacity: 0.35,
+    avatarShape: 'rounded',
+    radius: 20,
+    animation: 'fade',
+    fonts: ['inter-400', 'inter-600', 'inter-800'],
+    maxSocials: 6,
+  },
+  {
+    id: 'aurora',
+    name: 'Aurora',
+    description: 'Dark glass panel floating over slowly drifting northern-lights blobs.',
+    tags: ['dark', 'gradient', 'animated'],
+    palette: {
+      background: '#0b1020',
+      text: '#f8fafc',
+      muted: '#b4bfd6',
+      accent: '#67e8f9',
+      surface: '#1a2140',
+      border: '#2c3766',
+      pattern: '#ffffff',
+    },
+    pattern: null,
+    patternOpacity: 0.08,
+    avatarShape: 'circle',
+    radius: 24,
+    animation: 'fade',
+    fonts: ['inter-400', 'inter-600', 'inter-800'],
+    maxSocials: 6,
+  },
+  {
+    id: 'minimal',
+    name: 'Minimal',
+    description: 'Quiet monochrome layout with lots of whitespace and text-only links.',
+    tags: ['light', 'mono'],
+    palette: {
+      background: '#fafafa',
+      text: '#111111',
+      muted: '#737373',
+      accent: '#111111',
+      surface: '#f0f0f0',
+      border: '#e5e5e5',
+      pattern: '#e5e5e5',
+    },
+    pattern: null,
+    patternOpacity: 0.5,
+    avatarShape: 'circle',
+    radius: 16,
+    animation: 'fade',
+    fonts: ['inter-400', 'inter-600'],
+    maxSocials: 6,
+  },
+  {
+    id: 'hacker',
+    name: 'Hacker',
+    description: 'Matrix-green terminal session that types out whoami, about and links.',
+    tags: ['dark', 'terminal', 'mono', 'animated'],
+    palette: {
+      background: '#050a06',
+      text: '#39ff6a',
+      muted: '#1f9c42',
+      accent: '#39ff6a',
+      surface: '#0b160d',
+      border: '#1b3a22',
+      pattern: '#39ff6a',
+    },
+    pattern: 'scanlines',
+    patternOpacity: 0.06,
+    avatarShape: 'square',
+    radius: 10,
+    animation: 'type',
+    fonts: ['jetbrains-mono-400', 'jetbrains-mono-700'],
+    maxSocials: 5,
+  },
+  {
+    id: 'ascii',
+    name: 'ASCII',
+    description: 'Pure text-mode card: FIGlet name banner, ASCII-art avatar and a +---+ frame.',
+    tags: ['light', 'text', 'mono'],
+    palette: {
+      background: '#f7f5ee',
+      text: '#222222',
+      muted: '#777777',
+      accent: '#c2410c',
+      surface: '#efece2',
+      border: '#222222',
+      pattern: '#dddddd',
+    },
+    pattern: null,
+    patternOpacity: 0.4,
+    avatarShape: 'square',
+    radius: 8,
+    animation: 'type',
+    fonts: ['jetbrains-mono-400', 'jetbrains-mono-700'],
+    maxSocials: 6,
+  },
+  {
+    id: 'lofi',
+    name: 'Lo-fi',
+    description: 'Dusky chill-hop vibes: grainy sunset, a spinning vinyl avatar and an equalizer.',
+    tags: ['dark', 'cozy', 'animated'],
+    palette: {
+      background: '#2a1e3f',
+      text: '#fff3e6',
+      muted: '#e3c6d6',
+      accent: '#ffb38a',
+      surface: '#3d2b57',
+      border: '#5d4677',
+      pattern: '#ffffff',
+    },
+    pattern: 'grain',
+    patternOpacity: 0.18,
+    avatarShape: 'circle',
+    radius: 24,
+    animation: 'fade',
+    fonts: ['quicksand-500', 'quicksand-700'],
+    maxSocials: 5,
+  },
+  {
+    id: 'synthwave',
+    name: 'Synthwave',
+    description: 'Neon 80s horizon with a striped sun and an endlessly scrolling grid.',
+    tags: ['dark', 'neon', 'animated'],
+    palette: {
+      background: '#14072b',
+      text: '#fdf4ff',
+      muted: '#f0abfc',
+      accent: '#22d3ee',
+      surface: '#26104a',
+      border: '#ff2fd2',
+      pattern: '#ff2fd2',
+    },
+    pattern: null,
+    patternOpacity: 0.2,
+    avatarShape: 'circle',
+    radius: 18,
+    animation: 'pop',
+    fonts: ['orbitron-500', 'orbitron-900'],
+    maxSocials: 5,
+  },
+  {
+    id: 'pixel',
+    name: 'Pixel',
+    description: '8-bit handheld palette, pixel fonts and an RPG-style dialog box.',
+    tags: ['retro', '8-bit'],
+    palette: {
+      background: '#9bbc0f',
+      text: '#0f380f',
+      muted: '#306230',
+      accent: '#0f380f',
+      surface: '#8bac0f',
+      border: '#0f380f',
+      pattern: '#8bac0f',
+    },
+    pattern: null,
+    patternOpacity: 0.6,
+    avatarShape: 'square',
+    radius: 6,
+    animation: 'pop',
+    fonts: ['press-start-2p-400', 'vt323-400'],
+    maxSocials: 4,
+  },
+  {
+    id: 'brutalist',
+    name: 'Brutalist',
+    description: 'Neo-brutalism: loud yellow, thick black borders and hard offset shadows.',
+    tags: ['light', 'bold'],
+    palette: {
+      background: '#fde047',
+      text: '#000000',
+      muted: '#262626',
+      accent: '#000000',
+      surface: '#ffffff',
+      border: '#000000',
+      pattern: '#000000',
+    },
+    pattern: 'dots',
+    patternOpacity: 0.18,
+    avatarShape: 'square',
+    radius: 0,
+    animation: 'pop',
+    fonts: ['space-grotesk-500', 'space-grotesk-700'],
+    maxSocials: 4,
+  },
+  {
+    id: 'editorial',
+    name: 'Editorial',
+    description: 'Newspaper front page: serif masthead, drop cap and a captioned portrait.',
+    tags: ['light', 'serif'],
+    palette: {
+      background: '#f4efe4',
+      text: '#1a1a1a',
+      muted: '#5c5346',
+      accent: '#9b2226',
+      surface: '#ebe3d3',
+      border: '#1a1a1a',
+      pattern: '#e3d8c4',
+    },
+    pattern: null,
+    patternOpacity: 0.5,
+    avatarShape: 'square',
+    radius: 4,
+    animation: 'fade',
+    fonts: ['playfair-display-900', 'playfair-display-400i', 'lora-400'],
+    maxSocials: 5,
+  },
+  {
+    id: 'dracula',
+    name: 'Dracula',
+    description: 'Your profile as a syntax-highlighted TypeScript object in a code editor.',
+    tags: ['dark', 'code', 'mono'],
+    palette: {
+      background: '#282a36',
+      text: '#f8f8f2',
+      muted: '#6272a4',
+      accent: '#bd93f9',
+      surface: '#21222c',
+      border: '#44475a',
+      pattern: '#44475a',
+    },
+    pattern: null,
+    patternOpacity: 0.3,
+    avatarShape: 'rounded',
+    radius: 14,
+    animation: 'type',
+    fonts: ['jetbrains-mono-400', 'jetbrains-mono-700'],
+    maxSocials: 4,
+  },
+  {
+    id: 'nord',
+    name: 'Nord',
+    description: 'Calm arctic palette with a frosty accent bar and soft chips.',
+    tags: ['dark', 'calm'],
+    palette: {
+      background: '#2e3440',
+      text: '#eceff4',
+      muted: '#a3adbf',
+      accent: '#88c0d0',
+      surface: '#3b4252',
+      border: '#4c566a',
+      pattern: '#4c566a',
+    },
+    pattern: null,
+    patternOpacity: 0.3,
+    avatarShape: 'circle',
+    radius: 18,
+    animation: 'fade',
+    fonts: ['inter-400', 'inter-600'],
+    maxSocials: 6,
+  },
+] as const satisfies readonly ThemeMeta[];
+
+export type ThemeId = (typeof THEMES)[number]['id'];
+export const THEME_IDS = THEMES.map((t) => t.id) as [ThemeId, ...ThemeId[]];
+export const DEFAULT_THEME: ThemeId = 'classic';
+
+const byId = new Map<string, ThemeMeta>(THEMES.map((t) => [t.id, t]));
+export const getThemeMeta = (id: string): ThemeMeta =>
+  byId.get(id.toLowerCase()) ?? (byId.get(DEFAULT_THEME) as ThemeMeta);
+export const isThemeId = (id: string): id is ThemeId => byId.has(id.toLowerCase());
