@@ -16,7 +16,7 @@
   import { UI } from './lib/icons';
   import { builder, persist, toInput } from './lib/state.svelte';
 
-  const REPO = 'https://github.com/balaqiang/vibecard';
+  const REPO = 'https://github.com/balaqiang/vibecardivo';
   const ORIGINAL = 'https://github.com/satyawikananda/cardivo';
   const NAV = [
     ['Profile', '#profile'],
