@@ -131,7 +131,7 @@ function animationCss(ctx: RenderContext): string {
 @keyframes cv-pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}`;
     case 'type':
       return `
-.a{animation:cv-type .7s steps(24,end) both;${delay.replace('110ms', '260ms')}}
+.a{animation:cv-type .7s steps(24,end) backwards;${delay.replace('110ms', '260ms')}}
 @keyframes cv-type{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}`;
     case 'none':
       return '.card *,.card *::before,.card *::after{animation:none!important;transition:none!important}';
