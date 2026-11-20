@@ -1,11 +1,26 @@
 {
   "compilerOptions": {
-    "strict": false,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "target": "ES2018",
-    "module": "commonjs",
-    "sourceMap": false,
-    "declaration": true
-  }
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": [
+    "src",
+    "api",
+    "tests",
+    "scripts",
+    "vite.config.ts",
+    "vite.server.config.ts",
+    "vitest.config.ts"
+  ]
 }
