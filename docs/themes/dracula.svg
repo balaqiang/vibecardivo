@@ -21,7 +21,7 @@
 .meta-item .icon{width:12px;height:12px}
 .desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
 
-.a{animation:cv-type .7s steps(24,end) both;animation-delay:calc(var(--i,0) * 260ms)}
+.a{animation:cv-type .7s steps(24,end) backwards;animation-delay:calc(var(--i,0) * 260ms)}
 @keyframes cv-type{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 @media (prefers-reduced-motion:reduce){.card *,.card *::before,.card *::after{animation:none!important;transition:none!important}}
 
