@@ -4,7 +4,7 @@
 
 <h1>Vibecard</h1>
 
-<p><b>Dynamic SVG profile cards for your GitHub README</b> — 13 themes, 38 social platforms and a visual card builder.</p>
+<p><b>Dynamic SVG profile cards for your GitHub README</b> — 20 themes, 38 social platforms and a visual card builder.</p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
@@ -55,7 +55,7 @@ README links keep rendering. On top of that:
 
 |     | Feature                                                                                                                                  |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 🎨  | **13 themes** — classic, modern, aurora, minimal, hacker, ascii, lofi, synthwave, pixel, brutalist, editorial, dracula, nord             |
+| 🎨  | **20 themes** — classic, modern, aurora, minimal, hacker, ascii, lofi, synthwave, pixel, brutalist, editorial, dracula, nord, cyberpunk, cartoon, retro, neon, blueprint, notebook, ticket             |
 | 🧰  | **Visual card builder** (Svelte 5) with live preview, theme gallery, GitHub profile import, shareable links and a GitHub-style light/dark UI |
 | 🔗  | **38 social platforms** (was 4), shown in the order you choose; full profile URLs are cleaned up automatically                           |
 | 🏷️  | New fields: `role`, `location`, `skills` tags, `avatarShape`, `radius`, `animation`, `hideAvatar`                                        |
@@ -73,21 +73,27 @@ README links keep rendering. On top of that:
 
 Pick one with `?theme=<id>`. The default is `classic`, the original Cardivo look.
 
-|                              `classic`                              |                              `modern`                               |
-| :-----------------------------------------------------------------: | :-----------------------------------------------------------------: |
-|   <img src="docs/themes/classic.svg" width="400" alt="classic" />   |    <img src="docs/themes/modern.svg" width="400" alt="modern" />    |
-|                            **`aurora`**                             |                            **`minimal`**                            |
-|    <img src="docs/themes/aurora.svg" width="400" alt="aurora" />    |   <img src="docs/themes/minimal.svg" width="400" alt="minimal" />   |
-|                            **`hacker`**                             |                             **`ascii`**                             |
-|    <img src="docs/themes/hacker.svg" width="400" alt="hacker" />    |     <img src="docs/themes/ascii.svg" width="400" alt="ascii" />     |
-|                             **`lofi`**                              |                           **`synthwave`**                           |
-|      <img src="docs/themes/lofi.svg" width="400" alt="lofi" />      | <img src="docs/themes/synthwave.svg" width="400" alt="synthwave" /> |
-|                             **`pixel`**                             |                           **`brutalist`**                           |
-|     <img src="docs/themes/pixel.svg" width="400" alt="pixel" />     | <img src="docs/themes/brutalist.svg" width="400" alt="brutalist" /> |
-|                           **`editorial`**                           |                            **`dracula`**                            |
-| <img src="docs/themes/editorial.svg" width="400" alt="editorial" /> |   <img src="docs/themes/dracula.svg" width="400" alt="dracula" />   |
-|                             **`nord`**                              |                                                                     |
-|      <img src="docs/themes/nord.svg" width="400" alt="nord" />      |                                                                     |
+| `classic` | `modern` |
+| :---: | :---: |
+| <img src="docs/themes/classic.svg" width="400" alt="classic" /> | <img src="docs/themes/modern.svg" width="400" alt="modern" /> |
+| **`aurora`** | **`minimal`** |
+| <img src="docs/themes/aurora.svg" width="400" alt="aurora" /> | <img src="docs/themes/minimal.svg" width="400" alt="minimal" /> |
+| **`hacker`** | **`ascii`** |
+| <img src="docs/themes/hacker.svg" width="400" alt="hacker" /> | <img src="docs/themes/ascii.svg" width="400" alt="ascii" /> |
+| **`lofi`** | **`synthwave`** |
+| <img src="docs/themes/lofi.svg" width="400" alt="lofi" /> | <img src="docs/themes/synthwave.svg" width="400" alt="synthwave" /> |
+| **`pixel`** | **`brutalist`** |
+| <img src="docs/themes/pixel.svg" width="400" alt="pixel" /> | <img src="docs/themes/brutalist.svg" width="400" alt="brutalist" /> |
+| **`editorial`** | **`dracula`** |
+| <img src="docs/themes/editorial.svg" width="400" alt="editorial" /> | <img src="docs/themes/dracula.svg" width="400" alt="dracula" /> |
+| **`nord`** | **`cyberpunk`** |
+| <img src="docs/themes/nord.svg" width="400" alt="nord" /> | <img src="docs/themes/cyberpunk.svg" width="400" alt="cyberpunk" /> |
+| **`cartoon`** | **`retro`** |
+| <img src="docs/themes/cartoon.svg" width="400" alt="cartoon" /> | <img src="docs/themes/retro.svg" width="400" alt="retro" /> |
+| **`neon`** | **`blueprint`** |
+| <img src="docs/themes/neon.svg" width="400" alt="neon" /> | <img src="docs/themes/blueprint.svg" width="400" alt="blueprint" /> |
+| **`notebook`** | **`ticket`** |
+| <img src="docs/themes/notebook.svg" width="400" alt="notebook" /> | <img src="docs/themes/ticket.svg" width="400" alt="ticket" /> |
 
 | Theme       | Vibe                                                                 | Signature animation |
 | ----------- | -------------------------------------------------------------------- | ------------------- |
@@ -104,6 +110,13 @@ Pick one with `?theme=<id>`. The default is `classic`, the original Cardivo look
 | `editorial` | Newspaper masthead, serif headline, drop cap, captioned photo        | fade                |
 | `dracula`   | Your profile as a syntax-highlighted TypeScript object               | type                |
 | `nord`      | Calm arctic palette, frosty accent bar                               | fade                |
+| `cyberpunk` | Neon HUD ID card: cut corners, glitching name, scanning hexagon avatar | slide |
+| `cartoon`   | Comic panel: halftone sky, action lines, speech bubble, WOW! burst | pop |
+| `retro`     | Groovy 70s: cream paper, rainbow arch, chunky Shrikhand headline | slide |
+| `neon`      | Flickering neon sign on a brick wall with a humming ONLINE light | fade |
+| `blueprint` | Technical drawing: dimension lines, crosshairs and a title block | type |
+| `notebook`  | Handwritten ruled page, highlighter, sticky note, taped polaroid | fade |
+| `ticket`    | Boarding pass with route codes, seat, tear-off stub and barcode | slide |
 
 > Previews above are rendered offline with an initials avatar. Regenerate them with
 > `pnpm gallery docs/themes "github=you" --offline`.
@@ -153,7 +166,7 @@ Parameters marked **v1** come from the original Cardivo and behave the same way.
 | `colorPattern` **v1**     | Pattern colour                                                           | `%23eaeaea`                  |
 | `opacity` **v1**          | Pattern opacity, `0`–`1`                                                 | `0.4`                        |
 | `disableAnimation` **v1** | `true` turns all motion off                                              | `true`                       |
-| `theme`                   | One of the [13 themes](#themes)                                          | `ascii`                      |
+| `theme`                   | One of the [20 themes](#themes)                                          | `ascii`                      |
 | `role`                    | Job title or tagline                                                     | `Frontend%20Engineer`        |
 | `location`                | Where you are                                                            | `Bali,%20Indonesia`          |
 | `skills`                  | Comma-separated tags (max 8)                                             | `TypeScript,Svelte,Rust`     |
@@ -267,7 +280,7 @@ create `src/core/themes/<id>.ts` exporting `css()` and optionally `body()`, regi
 
 ### Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/balaqiang/vibecard)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/balaqiang/vibecardivo)
 
 `vercel.json` already configures everything: the builder is served from `dist/`, every `/api/*`
 route goes to `api/index.ts`, and the fonts are bundled with the function.
@@ -312,10 +325,10 @@ Vibecard is a from-scratch rebuild of Cardivo with a new name, and it stands on 
 - **[github-readme-stats](https://github.com/anuraghazra/github-readme-stats)** by Anurag Hazra — proof that serverless SVG cards are a great fit for READMEs.
 - **[Hero Patterns](https://heropatterns.com)** by Steve Schoger, packaged as [`hero-patterns`](https://github.com/lowmess/hero-patterns) by Alec Lomas.
 - **[Simple Icons](https://simpleicons.org)** (CC0) for brand icons, **[iconmonstr](https://iconmonstr.com)** for the LinkedIn and Twitter icons kept from the original, **[Lucide](https://lucide.dev)** for UI glyphs.
-- **[Fontsource](https://fontsource.org)** and the designers of Montserrat, Inter, JetBrains Mono, Quicksand, Orbitron, Press Start 2P, VT323, Space Grotesk, Playfair Display and Lora.
+- **[Fontsource](https://fontsource.org)** and the designers of Montserrat, Inter, JetBrains Mono, Quicksand, Orbitron, Press Start 2P, VT323, Space Grotesk, Playfair Display, Lora, Chakra Petch, Bangers, Comic Neue, Shrikhand, Tilt Neon, Architects Daughter and Caveat.
 - **[Primer](https://primer.style)**, GitHub's design system, which the builder's look is modelled on, and **[Mona Sans](https://github.com/github/mona-sans)** by GitHub for its headings.
 - **[figlet.js](https://github.com/patorjk/figlet.js)** and the FIGlet fonts behind the ASCII theme.
-- Theme palettes inspired by **[Dracula](https://draculatheme.com)**, **[Nord](https://www.nordtheme.com)**, 80s synthwave, lo-fi hip-hop streams, neo-brutalism and classic handheld consoles.
+- Theme palettes inspired by **[Dracula](https://draculatheme.com)**, **[Nord](https://www.nordtheme.com)**, 80s synthwave, lo-fi hip-hop streams, neo-brutalism, classic handheld consoles, cyberpunk fiction, comic books, 70s design, neon signs, architectural blueprints, school notebooks and airline boarding passes.
 - Built with **[Hono](https://hono.dev)**, **[Svelte](https://svelte.dev)**, **[Vite](https://vite.dev)**, **[zod](https://zod.dev)**, **[Vitest](https://vitest.dev)** and **[Biome](https://biomejs.dev)**; codebase mapped with **[Graphify](https://github.com/Graphify-Labs/graphify)**.
 
 ## License
