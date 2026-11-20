@@ -21,7 +21,7 @@
 .meta-item .icon{width:12px;height:12px}
 .desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
 
-.a{animation:cv-type .7s steps(24,end) both;animation-delay:calc(var(--i,0) * 260ms)}
+.a{animation:cv-type .7s steps(24,end) backwards;animation-delay:calc(var(--i,0) * 260ms)}
 @keyframes cv-type{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 @media (prefers-reduced-motion:reduce){.card *,.card *::before,.card *::after{animation:none!important;transition:none!important}}
 .pattern{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%224%22%20height%3D%224%22%3E%3Crect%20width%3D%224%22%20height%3D%222%22%20fill%3D%22%2339ff6a%22%20fill-opacity%3D%220.06%22%2F%3E%3C%2Fsvg%3E")}
