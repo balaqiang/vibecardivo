@@ -58,6 +58,13 @@ describe('metadata endpoints', () => {
       'editorial',
       'dracula',
       'nord',
+      'cyberpunk',
+      'cartoon',
+      'retro',
+      'neon',
+      'blueprint',
+      'notebook',
+      'ticket',
     ]);
   });
 
