@@ -1,27 +1,75 @@
 {
-  "name": "cardivo",
-  "version": "0.1.0",
-  "description": "Get your card name and put it in your magic readme 📇",
-  "main": "index.js",
-  "author": "Satya Wikananda",
+  "name": "vibecard",
+  "version": "2.0.0",
+  "description": "Dynamic SVG profile cards for your GitHub README — 13 themes, 38 social platforms and a visual card builder 📇",
+  "type": "module",
+  "author": "Balaqiang",
   "license": "MIT",
-  "scripts": {
-    "deploy:dev": "vercel",
-    "deploy:prod": "vercel --prod",
-    "develop": "vercel dev",
-    "test": "jest"
+  "keywords": [
+    "github",
+    "readme",
+    "profile",
+    "card",
+    "svg",
+    "hono",
+    "svelte",
+    "vercel"
+  ],
+  "engines": {
+    "node": ">=22.12"
   },
-  "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/prettier": "^2.1.5",
-    "@vercel/node": "^1.8.4",
-    "jest": "^26.6.3",
-    "prettier": "^2.1.2",
-    "ts-jest": "^26.4.4",
-    "typescript": "^4.0.5"
+  "packageManager": "pnpm@12.22.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:server": "vite build --config vite.server.config.ts",
+    "start": "node dist-server/node.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit && svelte-check --tsconfig ./web/tsconfig.json",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "render": "tsx scripts/render.ts",
+    "gallery": "tsx scripts/gallery.ts",
+    "fonts:sync": "tsx scripts/sync-fonts.ts",
+    "icons:sync": "tsx scripts/sync-icons.ts",
+    "graph": "graphify update ."
   },
   "dependencies": {
+    "@hono/node-server": "^2.1.9",
+    "figlet": "^1.12.0",
     "hero-patterns": "^2.1.0",
-    "isomorphic-unfetch": "^3.1.0"
+    "hono": "^4.13.19",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.8",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/lora": "^5.3.0",
+    "@fontsource/mona-sans": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@fontsource/orbitron": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/press-start-2p": "^5.3.0",
+    "@fontsource/quicksand": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@fontsource/vt323": "^5.3.0",
+    "@hono/vite-dev-server": "^0.26.1",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@types/figlet": "^1.12.0",
+    "@types/node": "^26.6.6",
+    "@types/pngjs": "^6.0.5",
+    "fast-xml-parser": "^5.12.1",
+    "simple-icons": "^16.38.0",
+    "svelte": "^5.57.3",
+    "svelte-check": "^4.7.8",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
   }
 }
