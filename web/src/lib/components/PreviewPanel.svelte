@@ -37,7 +37,7 @@
     } catch {}
   });
 
-  const DARK = new Set(['aurora', 'hacker', 'lofi', 'synthwave', 'dracula', 'nord']);
+  const DARK = new Set(['aurora', 'hacker', 'lofi', 'synthwave', 'dracula', 'nord', 'cyberpunk', 'neon', 'blueprint']);
   let darkTheme = $state(DARK.has(builder.theme) ? builder.theme : 'aurora');
 
   const src = $derived(`/api?${query}`);
