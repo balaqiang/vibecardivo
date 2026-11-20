@@ -140,3 +140,10 @@ export const luminance = (hex: string): number => {
 };
 
 export const isDark = (hex: string): boolean => luminance(hex) < 0.4;
+
+/** Small deterministic string hash (djb2), for decorative IDs and barcodes. */
+export const hash = (value: string): number => {
+  let h = 5381;
+  for (let i = 0; i < value.length; i++) h = ((h << 5) + h + value.charCodeAt(i)) >>> 0;
+  return h;
+};
