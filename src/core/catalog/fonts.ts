@@ -59,6 +59,20 @@ export const FONTS = {
     pkg: 'playfair-display',
   },
   'lora-400': { family: 'Lora', weight: 400, style: 'normal', pkg: 'lora' },
+  'chakra-petch-500': { family: 'Chakra Petch', weight: 500, style: 'normal', pkg: 'chakra-petch' },
+  'chakra-petch-700': { family: 'Chakra Petch', weight: 700, style: 'normal', pkg: 'chakra-petch' },
+  'bangers-400': { family: 'Bangers', weight: 400, style: 'normal', pkg: 'bangers' },
+  'comic-neue-700': { family: 'Comic Neue', weight: 700, style: 'normal', pkg: 'comic-neue' },
+  'shrikhand-400': { family: 'Shrikhand', weight: 400, style: 'normal', pkg: 'shrikhand' },
+  'tilt-neon-400': { family: 'Tilt Neon', weight: 400, style: 'normal', pkg: 'tilt-neon' },
+  'architects-daughter-400': {
+    family: 'Architects Daughter',
+    weight: 400,
+    style: 'normal',
+    pkg: 'architects-daughter',
+  },
+  'caveat-500': { family: 'Caveat', weight: 500, style: 'normal', pkg: 'caveat' },
+  'caveat-700': { family: 'Caveat', weight: 700, style: 'normal', pkg: 'caveat' },
 } as const satisfies Record<string, FontSpec>;
 
 export interface FontSpec {
